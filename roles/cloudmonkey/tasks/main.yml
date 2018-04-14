@@ -1,7 +1,7 @@
 ---
 
 - name: install setup tools
-  yum: name=python-setuptools state=present
+  package: name=python-setuptools state=present
 
 - name: ensure cm config is removed
   file: path=/root/.cloudmonkey/config state=absent
