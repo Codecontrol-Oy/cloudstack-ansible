@@ -5,7 +5,7 @@
 
 ---
 - name: Ensure selinux python bindings are installed
-  yum: name=libselinux-python state=present
+  package: name=libselinux-python state=present
   
 - name: Ensure the Apache Cloudstack Repo file is configured
   template: src=cloudstack.repo.j2 dest=/etc/yum.repos.d/cloudstack.repo
@@ -23,7 +23,7 @@
   selinux: policy=targeted state=permissive
 
 - name: Ensure CloudStack packages are installed
-  yum: name=cloudstack-management state=present
+  package: name=cloudstack-management state=present
 
 - name: Ensure vhd-util is present
   get_url: url="http://download.cloud.com.s3.amazonaws.com/tools/vhd-util" dest="/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver/vhd-util" mode=0755
@@ -31,7 +31,7 @@
 - include: ./setupdb.yml
 
 - name: Ensure CloudStack Usage Service is installed
-  yum: name=cloudstack-usage state=present
+  package: name=cloudstack-usage state=present
   
 - name: Ensure CloudStack Usage Service is started
   service: name=cloudstack-usage state=started
