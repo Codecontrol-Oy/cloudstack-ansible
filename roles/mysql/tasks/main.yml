@@ -5,9 +5,6 @@
 
 ---
 
-- name: Ensure mysql python are installed (Ansible requirement)
-  package: name=MySQL-python state=present
-  
 - name: Ensure mysql server is installed
   package: name=mysql-server state=present
   
