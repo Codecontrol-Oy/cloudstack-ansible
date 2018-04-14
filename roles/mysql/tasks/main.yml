@@ -9,7 +9,7 @@
   package: name=mysql-server state=present
   
 - name: Configure MySQL my.cnf using Template
-  template: src=my.cnf.j2 dest=/etc/my.cnf
+  template: src=my.cnf.j2 dest=/etc/mysql/my.cnf
 
 - name: restart MySQL
   service: name=mysql state=restarted
