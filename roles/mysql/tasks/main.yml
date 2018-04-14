@@ -8,9 +8,6 @@
 - name: Ensure mysql server is installed
   package: name=mysql-server state=present
 
-- name: Install the Python MySQLB module
-  pip: name=MySQL-python
-  
 - name: Configure MySQL my.cnf using Template
   template: src=my.cnf.j2 dest=/etc/mysql/my.cnf
 
