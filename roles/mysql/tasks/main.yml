@@ -12,10 +12,10 @@
   template: src=my.cnf.j2 dest=/etc/my.cnf
 
 - name: restart MySQL
-  service: name=mysqld state=restarted
+  service: name=mysql state=restarted
 
 - name: Ensure MySQL service is started and set to start on boot
-  service: name=mysqld state=started enabled=yes
+  service: name=mysql state=started enabled=yes
   
 - name: update mysql root password
   mysql_user: user="root" password="{{ mysql_root_password }}" host="localhost" login_user="root" login_password=""
